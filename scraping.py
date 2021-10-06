@@ -4,6 +4,7 @@ from splinter import Browser
 from bs4 import BeautifulSoup as soup
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
+import datetime as dt
 
 def scrape_all():
     # Initiate headless driver for deployment  # Set up Splinter
@@ -91,13 +92,11 @@ def mars_facts():
 
     # Assign columns and set index of dataframe
     df.columns=['Description', 'Mars', 'Earth']
-    df.set_index('Description', inplace=True)
+    df.set_index('Description', inplace = True)
     
     # Convert dataframe into HTML format, add bootstrap
-    return df.to_html(classes="table table-striped")
+    return df.to_html(classes = "table table-striped")
 
-if __name__ == "__main__":
+if __name__ ==  "__main__":
     # If running as sript, print scraped data
     print(scrape_all())
-
-
