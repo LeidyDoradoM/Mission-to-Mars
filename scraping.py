@@ -38,7 +38,7 @@ def mars_news(browser):
     html = browser.html
     news_soup = soup(html, 'html.parser')
     
-    # Add try/escept for erro handling
+    # Add try/except for erro handling
     try:
         slide_elem = news_soup.select_one('div.list_text')
         # look inside slide_elem and find the specific element: content_title and anything nested into it
